@@ -9,9 +9,13 @@ public class Special {
     private String language;
     private String description;
 
-    public Special(String name, int comicId) {
+//    public Special(String name, int comicId) {
+//        this.name = name;
+//        this.comicId = comicId;
+//    }
+
+    public Special(String name) {
         this.name = name;
-        this.comicId = comicId;
     }
 
     public int getId() {
@@ -73,24 +77,28 @@ public class Special {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Special)) return false;
 
         Special special = (Special) o;
 
-        if (year != special.year) return false;
-        if (comicId != special.comicId) return false;
-        if (!name.equals(special.name)) return false;
-        if (country != null ? !country.equals(special.country) : special.country != null) return false;
-        return language != null ? language.equals(special.language) : special.language == null;
+        if (getYear() != special.getYear()) return false;
+        if (getComicId() != special.getComicId()) return false;
+        if (!getName().equals(special.getName())) return false;
+        if (getCountry() != null ? !getCountry().equals(special.getCountry()) : special.getCountry() != null)
+            return false;
+        if (getLanguage() != null ? !getLanguage().equals(special.getLanguage()) : special.getLanguage() != null)
+            return false;
+        return getDescription() != null ? getDescription().equals(special.getDescription()) : special.getDescription() == null;
     }
 
     @Override
     public int hashCode() {
-        int result = name.hashCode();
-        result = 31 * result + year;
-        result = 31 * result + comicId;
-        result = 31 * result + (country != null ? country.hashCode() : 0);
-        result = 31 * result + (language != null ? language.hashCode() : 0);
+        int result = getName().hashCode();
+        result = 31 * result + getYear();
+        result = 31 * result + getComicId();
+        result = 31 * result + (getCountry() != null ? getCountry().hashCode() : 0);
+        result = 31 * result + (getLanguage() != null ? getLanguage().hashCode() : 0);
+        result = 31 * result + (getDescription() != null ? getDescription().hashCode() : 0);
         return result;
     }
 }

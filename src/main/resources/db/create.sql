@@ -9,3 +9,9 @@ CREATE TABLE IF NOT EXISTS specials (
     language VARCHAR,
     description VARCHAR
 );
+
+CREATE TABLE IF NOT EXISTS comics (
+    id int PRIMARY KEY auto_increment,
+    name VARCHAR,
+    dateOfBirth VARCHAR
+);

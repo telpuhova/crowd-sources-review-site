@@ -1,11 +1,9 @@
 package models;
 
-import java.util.List;
-
 public class Comic {
     private int id;
     private String name;
-    private List<Special> specials;
+    private String dateOfBirth;
 
     public Comic(String name) {
         this.name = name;
@@ -27,13 +25,14 @@ public class Comic {
         this.name = name;
     }
 
-    public List<Special> getSpecials() {
-        return specials;
+    public String getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setSpecials(List<Special> specials) {
-        this.specials = specials;
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
+
 
     @Override
     public boolean equals(Object o) {
@@ -43,13 +42,13 @@ public class Comic {
         Comic comic = (Comic) o;
 
         if (!name.equals(comic.name)) return false;
-        return specials != null ? specials.equals(comic.specials) : comic.specials == null;
+        return dateOfBirth != null ? dateOfBirth.equals(comic.dateOfBirth) : comic.dateOfBirth == null;
     }
 
     @Override
     public int hashCode() {
         int result = name.hashCode();
-        result = 31 * result + (specials != null ? specials.hashCode() : 0);
+        result = 31 * result + (dateOfBirth != null ? dateOfBirth.hashCode() : 0);
         return result;
     }
 }
