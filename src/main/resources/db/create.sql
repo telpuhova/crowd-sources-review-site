@@ -15,3 +15,12 @@ CREATE TABLE IF NOT EXISTS comics (
     name VARCHAR,
     dateOfBirth VARCHAR
 );
+
+CREATE TABLE IF NOT EXISTS reviews (
+    id int PRIMARY KEY auto_increment,
+    title VARCHAR,
+    rating INTEGER,
+    content VARCHAR,
+    userName VARCHAR,
+    specialId INTEGER
+);
