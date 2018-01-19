@@ -1,0 +1,34 @@
+{{#partial "content"}}
+
+    <h3>Add a new comedy special</h3>
+
+    <form action="/new_special" method="post">
+        <div class="form-group">
+            <label for="name">Enter name</label>
+            <input id="name" name="name" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label for="year">Enter year</label>
+            <input id="year" name="year" class="form-control" type="number">
+        </div>
+        <div class="form-group">
+            <label for="comicId">Enter comicId</label>
+            <input id="comicId" name="comicId" class="form-control" type="number">
+        </div>
+        <div class="form-group">
+            <label for="country">Enter country</label>
+            <input id="country" name="country" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label for="language">Enter language</label>
+            <input id="language" name="language" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label for="description">Enter description</label>
+            <input id="description" name="description" class="form-control" type="text">
+        </div>
+        <button type="submit">add</button>
+    </form>
+
+{{/partial}}
+{{>layout.hbs}}

@@ -69,4 +69,17 @@ public class Sql2oSpecialDaoTest {
         assertEquals(special2, specialDao.findById(special2.getId()));
     }
 
+    @Test
+    public void add_assignsCorrectFields() throws Exception {
+        Special special = new Special("Before turning a gun on himself", 2012, 1, "USA", "eng", "");
+        Special special2 = new Special("If I", 2004, 2, "USA", "eng", "");
+        Special special3 = new Special("What I Should Have Said Was Nothing", 2008, 3, "USA", "eng", "");
+        Special special4 = new Special("No place like home", 2016, 1, "USA", "eng", "");
+        specialDao.add(special);
+        specialDao.add(special2);
+        specialDao.add(special3);
+        specialDao.add(special4);
+        assertEquals("USA", special2.getCountry());
+    }
+
 }

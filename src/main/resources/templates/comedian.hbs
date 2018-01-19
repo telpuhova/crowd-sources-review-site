@@ -1,0 +1,27 @@
+{{#partial "content"}}
+
+    {{#if comic}}
+        <h3>{{comic.name}}</h3>
+        <p>date of birth: {{comic.dateOfBirth}}</p>
+        <br>
+        <p><strong>comedy specials:</strong></p>
+        <hr>
+
+        {{#if specials}}
+            {{#each specials}}
+                <p>{{name}}</p>
+                <p>{{year}}</p>
+
+                <p><a href="/specials/{{id}}">more</a></p>
+                <hr>
+            {{/each}}
+        {{else}}
+            <p>no specials in database</p>
+        {{/if}}
+
+    {{else}}
+        <p>no info available</p>
+    {{/if}}
+
+{{/partial}}
+{{>layout.hbs}}

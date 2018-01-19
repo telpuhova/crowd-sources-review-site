@@ -47,4 +47,47 @@ public class Sql2oSpecialDao implements SpecialDao{
                     .executeAndFetchFirst(Special.class);
         }
     }
+
+
+    public List<Special> findByComic(int comicId){
+        String sql = "SELECT * FROM specials WHERE comicId = :comicId";
+        try (Connection con = sql2o.open()) {
+            return con.createQuery(sql)
+                    .addParameter("comicId", comicId)
+                    .executeAndFetch(Special.class);
+        }
+    }
+
+    @Override
+    public void deleteById(int id){
+        String sql = "DELETE FROM specials WHERE id = :id";
+        try (Connection con = sql2o.open()) {
+            con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        } catch (Sql2oException ex) {
+            System.out.println(ex);
+        }
+    }
+
+    @Override
+    public void update(int id, String name, int year, int comicId, String country, String language, String description){
+        String sql = "UPDATE specials SET name = :name, year = :year, comicId = :comicId, country = :country, language = :language, description = :description WHERE id=:id";
+
+        try(Connection con = sql2o.open()) {
+            con.createQuery(sql)
+                    .addParameter("name", name)
+                    .addParameter("year", year)
+                    .addParameter("comicId", comicId)
+                    .addParameter("country", country)
+                    .addParameter("language", language)
+                    .addParameter("description", description)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        } catch (Sql2oException ex) {
+            System.out.println(ex);
+        }
+    }
+
 }
+

@@ -1,0 +1,34 @@
+{{#partial "content"}}
+
+    <h3>Update a comedy special</h3>
+
+    <form action="/update/{{special.id}}" method="post">
+        <div class="form-group">
+            <label for="name">Enter name</label>
+            <input id="name" name="name" class="form-control" type="text" value="{{special.name}}">
+        </div>
+        <div class="form-group">
+            <label for="year">Enter year</label>
+            <input id="year" name="year" class="form-control" type="number" value="{{special.year}}">
+        </div>
+        <div class="form-group">
+            <label for="comicId">Enter comicId</label>
+            <input id="comicId" name="comicId" class="form-control" type="number" value="{{special.comicId}}">
+        </div>
+        <div class="form-group">
+            <label for="country">Enter country</label>
+            <input id="country" name="country" class="form-control" type="text" value="{{special.country}}">
+        </div>
+        <div class="form-group">
+            <label for="language">Enter language</label>
+            <input id="language" name="language" class="form-control" type="text" value="{{special.language}}">
+        </div>
+        <div class="form-group">
+            <label for="description">Enter description</label>
+            <input id="description" name="description" class="form-control" type="text" value="{{special.description}}">
+        </div>
+        <button type="submit">add</button>
+    </form>
+
+{{/partial}}
+{{>layout.hbs}}

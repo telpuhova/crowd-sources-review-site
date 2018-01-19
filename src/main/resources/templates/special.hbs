@@ -1,0 +1,18 @@
+{{#partial "content"}}
+    {{#if special}}
+        <h3>{{special.name}}</h3>
+        <p>year: {{special.year}}</p>
+        <p>comic: {{comic.name}}</p>
+        <p>country: {{special.country}}</p>
+        <p>language: {{special.language}}</p>
+        <p>description: {{special.description}}</p>
+
+        <hr>
+        <p><a href="/delete/{{special.id}}">delete</a></p>
+        <p><a href="/update/{{special.id}}">update</a></p>
+    {{else}}
+        <p>no info available</p>
+    {{/if}}
+
+{{/partial}}
+{{>layout.hbs}}

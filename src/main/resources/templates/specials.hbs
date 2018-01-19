@@ -1,0 +1,16 @@
+{{#partial "content"}}
+
+    {{#if specials}}
+        {{#each specials}}
+            <p>{{name}}</p>
+            <p>{{year}}</p>
+
+            <p><a href="/specials/{{id}}">more</a></p>
+            <hr>
+        {{/each}}
+    {{else}}
+    <p>no specials in database</p>
+    {{/if}}
+
+{{/partial}}
+{{>layout.hbs}}

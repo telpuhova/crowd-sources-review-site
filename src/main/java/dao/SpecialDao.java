@@ -12,7 +12,9 @@ public interface SpecialDao {
     Special findById(int id);
 
     //update
+    void update(int id, String name, int year, int comicId, String country, String language, String description);
 
     //delete
+    void deleteById(int id);
 
 }

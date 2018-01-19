@@ -1,0 +1,15 @@
+{{#partial "content"}}
+
+    {{#if comedians}}
+        {{#each comedians}}
+            <p>{{name}}</p>
+
+            <p><a href="/comedians/{{id}}">more</a></p>
+            <hr>
+        {{/each}}
+    {{else}}
+        <p>no comedians in database</p>
+    {{/if}}
+
+{{/partial}}
+{{>layout.hbs}}

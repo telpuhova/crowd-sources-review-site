@@ -9,10 +9,27 @@ public class Special {
     private String language;
     private String description;
 
-//    public Special(String name, int comicId) {
-//        this.name = name;
-//        this.comicId = comicId;
-//    }
+    public Special(String name, int comicId) {
+        this.name = name;
+        this.comicId = comicId;
+    }
+
+    public Special(String name, int year, int comicId, String country, String language, String description) {
+        this.name = name;
+        this.year = year;
+        this.comicId = comicId;
+        this.country = country;
+        this.language = language;
+        this.description = description;
+    }
+
+    public Special(String name, int year, int comicId, String country, String language) {
+        this.name = name;
+        this.year = year;
+        this.comicId = comicId;
+        this.country = country;
+        this.language = language;
+    }
 
     public Special(String name) {
         this.name = name;
